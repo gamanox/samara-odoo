@@ -16,7 +16,6 @@
             "parish_intentions_eshop/static/src/scss/style.scss"
         ]
     },
-    "post_init_hook": "cleanup_duplicate_modules",
     "installable": True,
     "application": False
 }
