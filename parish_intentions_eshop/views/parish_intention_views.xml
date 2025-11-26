@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <record id="view_parish_intention_tree" model="ir.ui.view">
+    <field name="name">parish.intention.tree</field>
+    <field name="model">parish.intention</field>
+    <field name="arch" type="xml">
+      <tree string="Intenciones">
+        <field name="name"/>
+        <field name="partner_id"/>
+        <field name="date_time"/>
+        <field name="church"/>
+        <field name="amount"/>
+        <field name="state"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="view_parish_intention_form" model="ir.ui.view">
+    <field name="name">parish.intention.form</field>
+    <field name="model">parish.intention</field>
+    <field name="arch" type="xml">
+      <form string="Intención">
+        <sheet>
+          <group>
+            <field name="name"/>
+            <field name="partner_id"/>
+            <field name="date_time"/>
+            <field name="church"/>
+            <field name="amount"/>
+            <field name="message"/>
+            <field name="state"/>
+            <field name="sol_id" readonly="1"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="action_parish_intention" model="ir.actions.act_window">
+    <field name="name">Intentions</field>
+    <field name="res_model">parish.intention</field>
+    <field name="view_mode">tree,form,calendar</field>
+  </record>
+
+  <menuitem id="menu_parish_root" name="Parish" parent="sale.sale_menu_root"/>
+  <menuitem id="menu_parish_intention" name="Intentions" parent="menu_parish_root" action="action_parish_intention"/>
+
+</odoo>
