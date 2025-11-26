@@ -17,7 +17,6 @@
         ]
     },
     "post_init_hook": "cleanup_duplicate_modules",
-    "post_load": "cleanup_duplicate_modules",
     "installable": True,
     "application": False
 }
