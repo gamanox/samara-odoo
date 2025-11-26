@@ -1,5 +1,5 @@
 {
-    "name": "Parish Intentions for eCommerce",
+    "name": "parish_intentions_eshop",
     "summary": "Capture and manage mass intentions from the Odoo eCommerce shop (Odoo 17)",
     "version": "17.0.1.0.0",
     "category": "Website",
@@ -16,6 +16,8 @@
             "parish_intentions_eshop/static/src/scss/style.scss"
         ]
     },
+    "post_init_hook": "cleanup_duplicate_modules",
+    "post_load": "cleanup_duplicate_modules",
     "installable": True,
     "application": False
 }
