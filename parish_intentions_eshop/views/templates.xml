@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
   <template id="product_intention_form_inherit" inherit_id="website_sale.product">
-    <xpath expr="//div[@id='product_details'][h1[@itemprop='name' and normalize-space()='Intenciones de Misa']]" position="after">
+    <xpath expr="//div[@id='product_details']" position="after">
       <!-- Show the custom intention form only when the product has the INTENTION tag -->
      
      
