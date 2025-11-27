@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
   <template id="product_intention_form_inherit" inherit_id="website_sale.product">
-    <!-- Insertar después del bloque de detalles del producto -->
-    <xpath expr="//div[@id='product_details']" position="after">
-      <!-- Mostrar el formulario SOLO para el producto con código interno INTENTION -->
+    <xpath expr="//div[@id='product_details']" position="inside">
+
+      <!-- Mostrar el código interno (solo para depuración, opcional) -->
+      <t t-if="product">
+        <p class="text-muted small">
+          Código interno: <t t-esc="product.default_code"/>
+        </p>
+      </t>
+
+      <!-- Formulario solo para el producto INTENTION -->
       <t t-if="product and product.default_code == 'INTENTION'">
         <form action="/shop/intention/add" method="post" class="o_intention_form o_we_website_form mt-3">
           <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
           <input type="hidden" name="product_id" t-att-value="product.product_variant_id.id"/>
-
           <div class="row g-3">
             <div class="col-md-6">
               <label>Asunto / Nombre</label>
@@ -39,6 +45,7 @@
           </div>
         </form>
       </t>
+
     </xpath>
   </template>
 </odoo>
