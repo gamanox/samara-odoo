@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
   <template id="product_intention_form_inherit" inherit_id="website_sale.product">
-    <xpath expr="//div[@id='product_details']" position="after">
+    <xpath expr="//div[@id='product_details'][h1[@itemprop='name' and normalize-space()='Intenciones de Misa']]" position="after">
       <!-- Show the custom intention form only when the product has the INTENTION tag -->
-      <t t-set="has_intention_tag" t-value="'INTENTION' in (product.tag_ids.mapped('name') if product else [])"/>
-      <t t-if="product and has_intention_tag">
+     
+     
         <form action="/shop/intention/add" method="post" class="o_intention_form o_we_website_form mt-3">
           <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
           <input type="hidden" name="product_id" t-att-value="product.product_variant_id.id"/>
@@ -37,7 +37,7 @@
             </div>
           </div>
         </form>
-      </t>
+      
     </xpath>
   </template>
 </odoo>
