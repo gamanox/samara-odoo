@@ -11,7 +11,7 @@
       </t>
 
       <!-- Formulario solo para el producto INTENTION -->
-      <t t-if="product and product.default_code == 'INTENTION'">
+      <t t-if="product and product.default_code == 'INTENTIONS'">
         <form action="/shop/intention/add" method="post" class="o_intention_form o_we_website_form mt-3">
           <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
           <input type="hidden" name="product_id" t-att-value="product.product_variant_id.id"/>
