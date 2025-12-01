@@ -6,11 +6,14 @@
     "author": "Parroquia",
     "license": "LGPL-3",
     "depends": ["website_sale", "sale_management"],
-    "data": [
-        "security/ir.model.access.csv",
-        "views/parish_intention_views.xml",
-        "views/templates.xml"
-    ],
+    'data': [
+    'views/menu.xml',
+    'views/parish_chapel_views.xml',
+    'views/parish_chapel_schedule_views.xml',
+    'views/parish_intention_views.xml',
+    'security/ir.model.access.csv',
+],
+   
     "assets": {
         "web.assets_frontend": [
             "parish_intentions_eshop/static/src/scss/style.scss"
@@ -19,3 +22,5 @@
     "installable": True,
     "application": False
 }
+
+    
